@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bug Report</title>
+    <link rel = "stylesheet" type = "text/css" href="./CSS/q12.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div class= "mainContainer">
+
+    <div id="head">
+        <header>
+            <h1>TO THE NEW</h1>
+        </header>
+
+        <nav id="navbar">
+            <ul>
+                <li><a href="#">Home</a> </li>
+                <li><a href="#">Quick Help</a> </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class = "mainFormContainer">
+
+        <div id="formHead">
+            <h2 style="font-family: 'Open Sans', sans-serif !important;">Bug Report</h2>
+        </div>
+
+        <div id="formBody">
+
+            <label> Title:* <br> </label>
+            <input type="text"> <br><br>
+
+            <label> Description:* <br> </label>
+            <textarea rows="5"></textarea> <br><br>
+
+            <label> Operating system: <br> </label>
+            <select>
+                <option>Windows XP</option>
+                <option>Ubuntu</option>
+                <option>Other Linux distribution</option>
+            </select><br><br>
+
+            <label> Product:* <br> </label>
+            <select>
+                <option>Formoid</option>
+                <option>Other</option>
+            </select><br><br>
+
+            <label>Version:*<br> </label>
+            <input type="text" style="width: 20%;"> <br><br>
+
+            <label>License:<br></label>
+
+            <div class="radioContainer"><input type="radio" name="license" style="width:auto"> Free</div>
+            <div class="radioContainer"><input type="radio" name="license" style="width:auto"> Business</div>
+            <br><br>
+
+            <label> Severity <br> </label>
+            <select>
+                <option>Critical</option>
+                <option>Normal</option>
+            </select><br><br>
+
+            <label> Attachments <br> </label>
+            <input type="file"> <br><br>
+
+
+
+
+        </form>
+        </div>
+
+        <div id="formTail">
+            <button type="button" id="sendButton">Send</button>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

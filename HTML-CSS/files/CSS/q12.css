@@ -1,0 +1,139 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.mainContainer{
+    background: white;
+
+}
+
+#head{
+    border-bottom: 1px solid #BCC3CB;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    padding-left: 15px;
+
+}
+
+#head * {
+    color:#1bbc9b;
+    text-decoration: none;
+}
+
+header {
+    display: inline-block;
+}
+
+#navbar {
+    display: inline-block;
+    color: blue;
+    position: absolute;
+    right: 20px;
+    top: 25px;
+}
+
+#navbar li {
+    display: inline-block;
+    padding-right: 10px;
+
+}
+
+.mainFormContainer{
+    position: relative;
+    border: 1px solid black;
+    top: 25px;
+    left: 30%;
+    width: 40%;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+#formHead{
+    background: #BCC3CB;
+    color: white;
+
+}
+
+#formHead h2{
+    padding-left: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: inline-block;
+}
+
+#formBody{
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 5%;
+    width: 90%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+}
+
+#formBody * {
+    border-radius: 5px;
+    overflow: hidden;
+    width:100%;
+}
+
+#formBody select{
+    background: #1bbc9b;
+    color:white;
+}
+
+#formBody input[type=text], select{
+    height: 35px;
+}
+
+form{
+    margin-top: 10px;
+}
+
+#formTail{
+    background: #eeeff1;
+    border-top: 1px solid black;
+
+}
+
+#sendButton{
+    display: inline-block;
+    padding: 15px;
+    margin: 15px;
+    margin-left: 440px;
+}
+
+.radioContainer{
+    display: inline-block;
+    width: 49% !important;
+}
+
+label{
+    display: block;
+    padding-bottom: 5px;
+}
+
+button{
+    border-radius: 5px;
+    background: #1bbc9b;
+}
+
+input[type="file"] {
+    border: 1px solid #ccc;
+    height: 35px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+    height: 35px;
+    -webkit-appearance: none;
+    float: right;
+    margin: 0 0 0 10px;
+    color: #fff;
+    border: 1px solid #aaaaaa;
+    background-color: #ccc;
+}
