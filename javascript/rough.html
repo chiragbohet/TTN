@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // function shallowCopy(obj1, obj2) {
+        //     obj2 = obj1;
+        // }
+        //
+        // var obj1 =
+        //     {
+        //         'Name' : 'Chirag',
+        //         'Age' : 24
+        //     };
+        //
+        //
+        // var obj2;
+        // obj2 = obj1;
+        //
+        // console.log(obj1);
+        // console.log(obj2);
+        //
+        // obj1['Name'] = 'Ajay';
+        //
+        // console.log(obj2);
+        //
+        //
+        //  var obj1 =
+        //      {
+        //          Name : 'Chirag',
+        // //          Age : 24,
+        // //          address :
+        // //              {
+        // //                  'State' : 'Delhi',
+        //                  'City' : 'New Delhi'
+        //              }
+        //
+        //      };
+        //
+        //  var obj2 = {};
+        //
+        //  var cars = {
+        //
+        //
+        //
+        //
+        //      "car":"limousine",
+        //      "bike":"ktm-duke",
+        //      "plane":"lufthansa"
+        //  }
+        //  var person = {
+        //      "name":"Ram",
+        //      "age":27,
+        //      "vehicles": cars
+        //
+        //  };
+        //
+        //  console.log()
+        //
+        // // var p = Object.create(person);
+        //
+        //  for(var key in person)
+        //  {
+        //      //obj2[key] = obj1[key];
+        //
+        //      console.log(typeof(person[key]));
+        //      console.log('/n');
+        //  }
+        //
+        //
+        //  //console.log(person.vehicles);
+        //
+        //  // console.log(obj1);
+        //  // console.log(obj2);
+        //  //
+        //  // obj1['Name'] = 'Ajay';
+        //  // console.log(obj1);
+        //  // console.log(obj2);
+        //
+
+
+
+        //
+        // for(var key in obj)
+        // {
+        //     console.log(typeof (obj[key]));
+        // }
+
+
+        //
+        function printNestedObject(obj)
+        {
+            for(var key in obj)
+            {
+                if(typeof(obj[key]) == 'object')
+                {
+                    printNestedObject(obj[key]);
+                }
+                else
+                {
+                    console.log(key+":"+obj[key] +" : "+ typeof(obj[key]));
+                }
+            }
+        }
+
+        printNestedObject(obj);
+
+        //
+
+
+
+
+
+
+
+
+        // function deepCopy(o1){
+        //
+        //     for(var key in o1)
+        //     {
+        //         if(typeof(o1[key]) == 'object')
+        //         {
+        //             //recurse
+        //             console.log("----------------RECURSING NOW---------------")
+        //             console.log("key : " + key);
+        //             console.log("obj[key] : " + o1[key]);
+        //             console.log("typeof(key) : "+ typeof(key));
+        //             console.log("typeof(obj[key]) : " + typeof(o1[key]))
+        //             deepCopy(o1[key]);
+        //         }
+        //         else
+        //         {
+        //             //copy
+        //             console.log("key : " + key);
+        //             console.log("obj[key] : " + o1[key]);
+        //             console.log("typeof(key) : "+ typeof(key));
+        //             console.log("typeof(obj[key]) : " + typeof(o1[key]))
+        //         }
+        //     }
+        // }
+
+        var obj = {
+                'name':'chirag',
+                'age':24,
+                address : {
+                    'city':'new delhi',
+                    'state':'Delhi',
+                    mobile: {
+                        'Primary':'9654476321',
+                        'Secondary':'9873930521'
+                    }
+                }
+            }
+        ;
+
+        var destinationObject = {};
+
+        function deepCopy(sourceObject)
+        {
+            for(var key in sourceObject)
+            {
+                if(typeof(sourceObject[key]) == 'object')
+                {
+                    destinationObject[key] = {};
+                    deepCopy(sourceObject[key], destinationObject[key]);
+                }
+                else
+                {
+                    destinationObject[key] = sourceObject[key];
+                    //console.log(obj[key] +" : "+ typeof(obj[key]));
+                }
+            }
+
+
+        }
+
+        deepCopy(obj);
+
+
+
+        console.log("finished copying");
+
+        //printNestedObject(obj);
+
+        destinationObject.address['city'] = 'Mumbai';
+
+        printNestedObject(destinationObject);
+        printNestedObject(obj);
+
+
+        var obj = {
+            'name':undefined,
+            'age' : undefined,
+            'salary': undefined,
+            'DOB': undefined
+        };
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

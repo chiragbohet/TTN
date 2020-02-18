@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+
+    var list = [
+        {'name':'Chirag',
+            'age' : 24,
+            'salary': 5000,
+            'DOB': new Date(1995,03,29)
+        },
+
+        {'name':'Ajay',
+         'age' : '24',
+          'salary': '10000',
+          'DOB': new Date(1995,09,15)
+        },
+
+    {'name':'Harshit',
+        'age' : '22',
+        'salary': '12000',
+        'DOB': new Date(1997,07,13)
+    },
+
+    {'name':'Arshad',
+        'age' : '23',
+        'salary': '14400',
+        'DOB': new Date(1994,06,01)
+    },
+
+    {'name':'Nikhil',
+        'age' : '22',
+        'salary': '100',
+        'DOB': new Date(2001,09,15)
+    },
+
+    {'name':'Himanshu',
+        'age' : '21',
+        'salary': '600',
+        'DOB': new Date(2004,09,15)
+    }
+
+    ];
+
+    function printArray(list) {
+
+        for (var i = 0; i < list.length; i++) {
+            console.log(list[i]);
+        }
+    }
+
+    printArray(list);
+
+    //----------------------------------------------------
+    var newlist = list.filter(function filterBySalary(obj)
+    {
+        return (obj.salary < 1000) && (obj.age > 20);
+    })
+
+    console.log("-----After sort-----");
+    printArray(newlist);
+    
+
+
+    var incrementedList = newlist.map(function incrementSalary(obj) {
+        obj.salary = obj.salary * 5;
+    });
+
+    console.log("-----After increment-----");
+    printArray(incrementedList);
+
+
+</script>
+<body>
+
+</body>
+</html>

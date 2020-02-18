@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        function calculateCircleArea() {
+
+            var radius = parseFloat(document.getElementById("radius").value);
+
+
+            if(!isNaN(radius))
+            {
+                var area = Math.PI * radius * radius;
+                document.getElementById("outputLabel").innerHTML= "Area : " + area;
+
+            }
+            else
+                alert("Not a valid input!");
+
+        }
+    </script>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+
+        #inner{
+            position: relative;
+            display: inline-block;
+            border:1px solid black;
+            border-radius: 5px;
+            background: beige;
+            width : 40%;
+            left: 30%;
+            top: 100px;
+
+        }
+
+
+        #headLabel{
+            text-align: center;
+            font-size: 25px;
+        }
+        #inputLabel, #buttonContainer, #outputContainer {
+            padding-left: 20px;
+            font-size: 20px;
+        }
+
+        #buttonContainer{
+            width: 50%;
+            padding:10px;
+            margin: 0 auto;
+        }
+        button{
+            font-size: 15px;
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="main">
+<div id="inner">
+
+    <div id="formContainer">
+        <div id="headLabel"><label>Circle Area Calculator</label><br></div>
+        <div  id="inputLabel"><label>Radius : </label><input type="text" id="radius"><br></div>
+        <div id="buttonContainer"><button onclick="calculateCircleArea(); return false;">Calculate</button></div>
+        <div id="outputContainer"><label id="outputLabel">Area : </label></div>
+    </div>
+
+</div>
+</div>
+</body>
+</html>

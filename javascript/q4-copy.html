@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+
+    var sourceObj =
+        {
+            'name': 'Chirag',
+            'age': 24,
+            'address':
+                {
+                    'state': 'Delhi',
+                    'city': 'New Delhi',
+                    'pincode': 110064
+                },
+
+            mobile:
+                {
+                    primary:
+                        {
+                            prefix: '+',
+                            countryCode: 91,
+                            mobile: 9654476321
+                        }
+
+                }
+        };
+
+    function printNestedObject(Obj)
+    {
+        for(var key in Obj)
+        {
+            console.log(key + ":" + Obj[key] + ":" + typeof(Obj[key]) );
+
+            if(typeof(Obj[key]) == 'object')
+            {
+
+                printNestedObject(Obj[key]);
+            }
+
+        }
+
+    }
+
+    function shallowCopy(sourceObj, destinationObj)
+    {
+        for(var key in sourceObj)
+        {
+            destinationObj[key] = sourceObj[key];
+        }
+    }
+
+    function deepCopy(sourceObj, destinationObj)
+    {
+        for(var key in sourceObj)
+        {
+            if(typeof(sourceObj[key]) == 'object')
+            {
+                destinationObj[key] = {};
+                deepCopy(sourceObj[key], destinationObj[key]);
+            }
+            else
+            {
+                destinationObj[key] = sourceObj[key];
+            }
+        }
+    }
+
+    function shallowCopyDemo(sourceObj) {
+
+        destinationObj = {};
+        printNestedObject(sourceObj);
+        shallowCopy(sourceObj, destinationObj);
+        console.log("-----Shallow copy done.-----");
+        printNestedObject(destinationObj);
+
+        //Proof :  that copy is indeed shallow.
+
+        sourceObj.address['state'] = 'Mumbai';
+        sourceObj.address['city'] = 'Pune';
+
+        //Changes will be reflected in destinationObj as well.
+
+        console.log("-----Changes are reflected in destinationObj!-----");
+        printNestedObject(destinationObj);
+
+    }
+
+    function deepCopyDemo(sourceObj)
+    {
+        destinationObj = {};
+        printNestedObject(sourceObj);
+        deepCopy(sourceObj,destinationObj);
+        console.log("-----deep copy done.-----");
+        printNestedObject(destinationObj);
+
+        //Proof :  that copy is indeed deep.
+
+        sourceObj.address['state'] = 'Mumbai';
+        sourceObj.address['city'] = 'Pune';
+
+        //Changes will be NOT be reflected in destinationObj as well.
+
+        console.log("-----Changes are NOT reflected in destinationObj!-----");
+        printNestedObject(destinationObj);
+
+    }
+
+
+
+    //shallowCopyDemo(sourceObj);
+    //deepCopyDemo(sourceObj);
+
+</script>
+<body>
+
+</body>
+</html>

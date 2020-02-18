@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Palindrome</title>
+
+    <script>
+
+        function isPalindrome() {
+
+            var testString = prompt("Enter a string to check : ").toString();
+            var testStringLength = testString.length;
+            var low = 0;
+            var high = testStringLength - 1;
+
+            while (low <= high) {
+
+                if (!(testString[low++] == testString[high--]))
+                {
+                    alert("Not Palindrome!");
+                    return;
+                }
+
+            }
+
+            alert("Palindrome!");
+
+        }
+
+    </script>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        #main {
+            display: inline-block;
+            border: 1px solid darkgray;
+            border-radius: 10px;
+            width: 30%;
+            padding: 20px;
+            margin-top: 100px;
+            background: beige;
+        }
+
+        label {
+            display: inline-block;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            font-size: 25px;
+            border-radius: 5px;
+
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+
+</body>
+</html>

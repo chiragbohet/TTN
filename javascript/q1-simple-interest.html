@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple interest calculator</title>
+    <script>
+
+        function calculateSimpleInterest() {
+
+            var amount = parseFloat(prompt("Enter amount : "));
+            var interestRate = parseFloat(prompt("Enter interest rate: "));
+            var years = parseFloat(prompt("Enter duration in years : "));
+
+            var simpleInterest = (amount * interestRate * years)/100;
+
+            alert("Interest is : " + simpleInterest);
+
+
+        }
+
+    </script>
+
+    <style>
+
+        *{
+            margin:0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        #main
+        {
+            display: inline-block;
+            border: 1px solid darkgray;
+            border-radius: 10px;
+            width: 30%;
+            padding: 20px;
+            margin-top: 100px;
+            background: beige;
+        }
+
+        label
+        {
+            display: inline-block;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        button
+        {
+            font-size: 25px;
+            border-radius: 5px;
+
+        }
+
+
+    </style>
+
+</head>
+<body>
+<div id="main">
+<label>Simple interest calculator</label><br>
+<button onclick="calculateSimpleInterest()">Calculate</button>
+</div>
+</body>
+</html>
